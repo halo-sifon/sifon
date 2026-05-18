@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // OpenNext 构建产物
+    ".open-next/**",
   ]),
 ]);
 

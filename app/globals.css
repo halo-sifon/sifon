@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   Apple Design System - Tailwind v4 Theme
+   参考: DESIGN.md
+   ============================================ */
+
+@theme {
+  /* ----- 字体 ----- */
+  --font-display: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
+
+  /* ----- 颜色 - 品牌与交互 ----- */
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;
+
+  /* ----- 颜色 - 文字 ----- */
+  --color-ink: #1d1d1f;
+  --color-body: var(--color-ink);
+  --color-body-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
+  --color-ink-muted-80: #333333;
+  --color-ink-muted-48: #7a7a7a;
+
+  /* ----- 颜色 - 表面 ----- */
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f5f5f7;
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #272729;
+  --color-surface-tile-2: #2a2a2c;
+  --color-surface-tile-3: #252527;
+  --color-surface-black: #000000;
+  --color-surface-chip-translucent: #d2d2d7;
+
+  /* ----- 颜色 - 边框 ----- */
+  --color-divider-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+
+  /* ----- 颜色 - 语义别名 ----- */
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+
+  /* ----- 字号 ----- */
+  --text-hero: 56px;
+  --text-display-lg: 40px;
+  --text-display-md: 34px;
+  --text-lead: 28px;
+  --text-lead-airy: 24px;
+  --text-tagline: 21px;
+  --text-body: 17px;
+  --text-caption: 14px;
+  --text-button-large: 18px;
+  --text-button-utility: 14px;
+  --text-fine-print: 12px;
+  --text-micro-legal: 10px;
+  --text-nav-link: 12px;
+
+  /* ----- 字距 ----- */
+  --tracking-tight: -0.374px;
+  --tracking-tighter: -0.28px;
+  --tracking-caption: -0.224px;
+  --tracking-fine: -0.12px;
+
+  /* ----- 行高 ----- */
+  --leading-tight: 1.07;
+  --leading-display: 1.1;
+  --leading-body: 1.47;
+  --leading-dense: 2.41;
+
+  /* ----- 间距 ----- */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 17px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 80px;
+
+  /* ----- 圆角 ----- */
+  --radius-none: 0px;
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 11px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* ----- 阴影 ----- */
+  --shadow-product: 3px 5px 30px 0 rgba(0, 0, 0, 0.22);
+
+  /* ----- 过渡 ----- */
+  --ease-button: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   基础样式
+   ============================================ */
+
+:root {
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-surface-tile-1);
+    --foreground: var(--color-body-on-dark);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-text);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-tight);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
